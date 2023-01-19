@@ -11,7 +11,7 @@ import {
 } from "react-icons/ai";
 import toast from "react-hot-toast"
 
-const productDetails = ({ product, products }: any) => {
+const ProductDetails = ({ product, products }: any) => {
   const { image, name, description, price } = product;
   const [index, setIndex] = useState(0);
   const { decQty, inQty, qty, onAdd } = useStateContext();
@@ -147,4 +147,4 @@ export const getStaticProps = async ({ params: { slug } }: any) => {
   };
 };
 
-export default productDetails;
+export default ProductDetails;
