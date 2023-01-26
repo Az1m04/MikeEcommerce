@@ -4,13 +4,13 @@
 /node_modules
 /.pnp
 .pnp.js
-/sanity_ecommerce
 
 # testing
 /coverage
 
 # next.js
 /.next/
+/.sanity_ecommerce/
 /out/
 
 # production
