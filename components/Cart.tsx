@@ -78,23 +78,23 @@ const Cart = () => {
                 />
                 <div className="item-desc">
                   <div className="flex top">
-                    <h5 className="">{item?.name}</h5>
-                    <h4>{item?.price}</h4>
+                    <h5 className="font-semibold">{item?.name}</h5>
+                    <h4 className="text-orange-500">Rs. {item?.price}.00</h4>
                   </div>
                   <div className="flex bottom">
-                    <div>
-                      <p className="quantity-desc">
+                    <div >
+                      <p className="quantity-desc flex" style={{width:'150px'}}>
                         <span
-                          className="minus"
+                          className=" text-orange-500 mt-1"
                           onClick={() =>
                             toggleCartItemQuantity(item?._id, "desc")
                           }
                         >
                           <AiOutlineMinus />
                         </span>
-                        <span className="num">{item?.quantity}</span>
+                        <span className="border-x-2 border-gray-300 p-2 ">{item?.quantity}</span>
                         <span
-                          className="pluse"
+                          className="mt-1 "
                           onClick={() =>
                             toggleCartItemQuantity(item?._id, "inc")
                           }
@@ -116,10 +116,10 @@ const Cart = () => {
             ))}
         </div>
         {cartItems?.length >= 1 && (
-          <div className="cart-bottom">
-            <div className="total">
+          <div className="cart-bottom border-t -m-2">
+            <div className="total ">
               <h3>Subtotal:</h3>
-              <h3>${totalPrice}</h3>
+              <h3>Rs. {totalPrice}.00</h3>
             </div>
             <div className="btn-container">
               <button type="button" className="btn" onClick={handleCheckout}>

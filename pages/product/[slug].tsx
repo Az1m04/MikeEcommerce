@@ -36,13 +36,13 @@ const ProductDetails = ({ product, products }: any) => {
   };
 
   return (
-    <div>
-      <div className="product-detail-container">
-        <div>
-          <div className="image-container">
+    <div className="mt-40">
+      <div className="product-detail-container w-full">
+        <div className="w-full">
+          <div className="w-full ">
             <img
               src={urlFor(image && image[index])}
-              className="product-detail-image"
+              className="product-detail-image shadow-md"
             />
           </div>
           <div className="small-images-container">
@@ -51,17 +51,17 @@ const ProductDetails = ({ product, products }: any) => {
                 key={i}
                 src={urlFor(item)}
                 className={
-                  i === index ? "small-image selected-image" : "small-image"
+                  i === index ? "small-image selected-image shadow" : "small-image"
                 }
                 onMouseOver={() => setIndex(i)}
               />
             ))}
           </div>
         </div>
-        <div className="product-detail-desc">
-          <h1>{name}</h1>
+        <div className="product-detail-desc w-full ">
+          <h1 className="text-3xl font-bold">{name}</h1>
           <div className="reviews">
-            <div>
+            <div className="flex">
               <AiFillStar />
               <AiFillStar />
               <AiFillStar />
@@ -70,19 +70,19 @@ const ProductDetails = ({ product, products }: any) => {
             </div>
             <p>(20)</p>
           </div>
-          <h4>Details : </h4>
+          <h4 className="font-semibold text-xl">Details : </h4>
           <p>{description}</p>
           <p className="price">${price}</p>
-          <div className="quantity">
+          <div className="quantity w-full">
             <h3>Quantity:</h3>
-            <p className="quantity-desc">
-              <span className="minus" onClick={decQty}>
+            <p className="quantity-desc flex align-items-center cursor-pointer">
+              <div className="flex align-items-center p-2 text-orange-600" onClick={decQty}>
                 <AiOutlineMinus />
-              </span>
-              <span className="num">{qty}</span>
-              <span className="pluse" onClick={inQty}>
+              </div>
+              <div className="flex align-items-center px-4 p-1 border-gray-400 border-x">{qty}</div>
+              <div className="flex align-items-center p-2" onClick={inQty}>
                 <AiOutlinePlus />
-              </span>
+              </div>
             </p>
           </div>
           <div className="buttons">
@@ -100,7 +100,7 @@ const ProductDetails = ({ product, products }: any) => {
         </div>
       </div>
       <div className="maylike-products-wrapper">
-        <h2>YOU MAY ALSO LIKE</h2>
+        <h2 className="font-semibold">YOU MAY ALSO LIKE</h2>
         <div className="marquee">
           <div className="maylike-products-container track">
             {products.map((item: any) => (

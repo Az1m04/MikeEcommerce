@@ -12,11 +12,14 @@ const FooterBanner = ({
     product,
     buttonText,
     image,
-    desc
+    desc,
   },
 }: any) => {
   return (
-    <div className="footer-banner-container">
+    <div
+      className="footer-banner-container             bg-gradient-to-r blur-30 backdrop-blur-lg 
+    from-orange-500 via-purple-500 to-indigo-500"
+    >
       <div className="banner-desc">
         <div className="left">
           <p>{discount}</p>
@@ -24,16 +27,14 @@ const FooterBanner = ({
           <p>{saleTime}</p>
         </div>
         <div className="right">
-        <p>{smallText}</p>
+          <p>{smallText}</p>
           <h3>{midText}</h3>
           <p>{desc}</p>
           <Link href={`/product/${product}`}>
-            <button  type="button">
-              {buttonText}
-            </button>
+            <button type="button">{buttonText}</button>
           </Link>
         </div>
-        <img src={urlFor(image)} className="footer-banner-image"/>
+        <img src={urlFor(image)} className="footer-banner-image" />
       </div>
     </div>
   );
